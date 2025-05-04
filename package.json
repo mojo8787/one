@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development tsx server/index.ts",
     "build": "vite build && npm run build:functions",
-    "build:functions": "mkdir -p dist/functions && cp server/netlify.js dist/functions/api.js",
+    "build:functions": "mkdir -p dist/functions && cp server/netlify.js dist/functions/api.js && cp server/function-package.json dist/functions/package.json && node server/copy-deps.js",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
     "db:push": "drizzle-kit push"
