@@ -35,8 +35,20 @@ type RegisterFormValues = z.infer<typeof registerFormSchema>;
 
 export default function AuthPage() {
   const [activeTab, setActiveTab] = useState<string>("login");
-  const { user, loginMutation, registerMutation } = useAuth();
+  const { user, directLoginMutation, registerMutation, checkSession } = useAuth();
   const [_, navigate] = useLocation();
+  const [sessionStatus, setSessionStatus] = useState<any>(null);
+
+  useEffect(() => {
+    // Check session status for debugging
+    const getSessionStatus = async () => {
+      const status = await checkSession();
+      setSessionStatus(status);
+      console.log("Session status:", status);
+    };
+    
+    getSessionStatus();
+  }, [checkSession]);
 
   useEffect(() => {
     // Redirect if already logged in
@@ -72,7 +84,8 @@ export default function AuthPage() {
   });
 
   const onLoginSubmit = (data: LoginFormValues) => {
-    loginMutation.mutate(data);
+    // Use direct login instead of regular login
+    directLoginMutation.mutate(data);
   };
 
   const onRegisterSubmit = (data: RegisterFormValues) => {
@@ -200,9 +213,9 @@ export default function AuthPage() {
                     <Button 
                       type="submit" 
                       className="w-full" 
-                      disabled={loginMutation.isPending}
+                      disabled={directLoginMutation.isPending}
                     >
-                      {loginMutation.isPending ? "Signing in..." : "Sign in"}
+                      {directLoginMutation.isPending ? "Signing in..." : "Sign in"}
                     </Button>
                   </form>
                 </Form>

@@ -13,8 +13,11 @@ type AuthContextType = {
   isLoading: boolean;
   error: Error | null;
   loginMutation: UseMutationResult<User, Error, UserLogin>;
+  directLoginMutation: UseMutationResult<User, Error, UserLogin>;
   logoutMutation: UseMutationResult<void, Error, void>;
+  directLogoutMutation: UseMutationResult<void, Error, void>;
   registerMutation: UseMutationResult<User, Error, RegisterCustomer>;
+  checkSession: () => Promise<any>;
 };
 
 export const AuthContext = createContext<AuthContextType | null>(null);
@@ -31,9 +34,33 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     queryFn: getQueryFn({ on401: "returnNull" }),
   });
 
+  // Standard login via Passport (original method)
   const loginMutation = useMutation({
     mutationFn: async (credentials: UserLogin) => {
       const res = await apiRequest("POST", "/api/login", credentials);
+      return await res.json();
+    },
+    onSuccess: (user: User) => {
+      queryClient.setQueryData(["/api/user"], user);
+      toast({
+        title: "Login successful",
+        description: `Welcome back, ${user.username}!`,
+        variant: "default",
+      });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Login failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    },
+  });
+  
+  // Direct login (alternative method)
+  const directLoginMutation = useMutation({
+    mutationFn: async (credentials: UserLogin) => {
+      const res = await apiRequest("POST", "/api/direct-login", credentials);
       return await res.json();
     },
     onSuccess: (user: User) => {
@@ -75,6 +102,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     },
   });
 
+  // Standard logout via Passport
   const logoutMutation = useMutation({
     mutationFn: async () => {
       await apiRequest("POST", "/api/logout");
@@ -87,6 +115,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         description: "You have been successfully logged out.",
         variant: "default",
       });
+      
+      // Force reload after logout to ensure clean state
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 500);
     },
     onError: (error: Error) => {
       toast({
@@ -94,8 +127,55 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         description: error.message,
         variant: "destructive",
       });
+      
+      // Even if there's an error, try to clear local state
+      queryClient.setQueryData(["/api/user"], null);
+      queryClient.clear();
     },
   });
+  
+  // Direct logout (alternative method)
+  const directLogoutMutation = useMutation({
+    mutationFn: async () => {
+      await apiRequest("POST", "/api/direct-logout");
+    },
+    onSuccess: () => {
+      queryClient.setQueryData(["/api/user"], null);
+      queryClient.clear();
+      toast({
+        title: "Logged out",
+        description: "You have been successfully logged out.",
+        variant: "default",
+      });
+      
+      // Force reload after logout to ensure clean state
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 500);
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Logout failed",
+        description: error.message,
+        variant: "destructive",
+      });
+      
+      // Even if there's an error, try to clear local state
+      queryClient.setQueryData(["/api/user"], null);
+      queryClient.clear();
+    },
+  });
+  
+  // Function to check session status
+  const checkSession = async () => {
+    try {
+      const res = await apiRequest("GET", "/api/check-session");
+      return await res.json();
+    } catch (error) {
+      console.error("Failed to check session:", error);
+      return { error: (error as Error).message };
+    }
+  };
 
   return (
     <AuthContext.Provider
@@ -104,8 +184,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         isLoading,
         error,
         loginMutation,
+        directLoginMutation,
         logoutMutation,
+        directLogoutMutation,
         registerMutation,
+        checkSession,
       }}
     >
       {children}
