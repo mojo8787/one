@@ -1,6 +1,6 @@
 import express from 'express';
 import serverless from 'serverless-http';
-import { installExpressApp } from './index';
+import { installExpressApp } from './index.js';
 
 // Create Express app
 const app = express();
