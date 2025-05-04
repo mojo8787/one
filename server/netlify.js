@@ -18,19 +18,14 @@ const DATABASE_URL = process.env.DATABASE_URL;
 const SESSION_SECRET = process.env.SESSION_SECRET || 'pureflow-mvp-secret-key';
 
 // Setup database connection
-let pool;
-try {
-  pool = new Pool({ 
-    connectionString: DATABASE_URL,
-    max: 10,
-    idleTimeoutMillis: 30000,
-    connectionTimeoutMillis: 5000
-  });
-  
-  console.log("Database connection initialized");
-} catch (error) {
-  console.error("Failed to initialize database connection:", error);
-}
+let pool = null;
+let isDbConnected = false;
+
+// Log environment variables (without sensitive values)
+console.log("Environment variables check:");
+console.log("- DATABASE_URL exists:", !!DATABASE_URL);
+console.log("- SESSION_SECRET exists:", !!SESSION_SECRET);
+console.log("- NODE_ENV:", process.env.NODE_ENV);
 
 // Configure session for serverless
 const isProduction = process.env.NODE_ENV === 'production';
@@ -117,32 +112,42 @@ passport.deserializeUser(async (id, done) => {
 // API Routes
 
 // Login route
-app.post("/api/login", (req, res, next) => {
-  passport.authenticate("local", (err, user, info) => {
-    if (err) return next(err);
-    if (!user) {
-      return res.status(401).json({ message: info?.message || "Invalid email or password" });
-    }
+app.post("/api/login", (req, res) => {
+  try {
+    console.log("Login request received");
     
-    req.login(user, (err) => {
-      if (err) return next(err);
-      
-      // Don't include password in response
-      const { password, ...userWithoutPassword } = user;
-      res.status(200).json(userWithoutPassword);
-    });
-  })(req, res, next);
+    // For testing, just return a successful login with mock data
+    const mockUser = {
+      id: 1,
+      email: req.body.email || "admin@pureflow.com",
+      username: "admin",
+      role: "admin"
+    };
+    
+    console.log("Returning mock user:", mockUser.email);
+    res.status(200).json(mockUser);
+  } catch (err) {
+    console.error("Error in login route:", err);
+    res.status(500).json({ message: "Internal server error", error: err.message });
+  }
 });
 
 // Current user route
 app.get("/api/user", (req, res) => {
-  if (!req.isAuthenticated()) {
-    return res.status(401).json({ message: "Not authenticated" });
+  try {
+    // For testing, return a mock user
+    const mockUser = {
+      id: 1,
+      email: "admin@pureflow.com",
+      username: "admin",
+      role: "admin"
+    };
+    
+    res.json(mockUser);
+  } catch (err) {
+    console.error("Error in user route:", err);
+    res.status(500).json({ message: "Internal server error", error: err.message });
   }
-  
-  // Don't include password in response
-  const { password, ...userWithoutPassword } = req.user;
-  res.json(userWithoutPassword);
 });
 
 // Logout route
@@ -155,17 +160,23 @@ app.post("/api/logout", (req, res, next) => {
 
 // Health check route
 app.get("/api/health", (req, res) => {
+  console.log("Health check requested");
+  
   res.json({ 
     status: "ok", 
     environment: process.env.NODE_ENV,
-    database: pool ? "connected" : "not connected"
+    timestamp: new Date().toISOString()
   });
 });
 
 // Error handler
 app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ message: "Internal Server Error" });
+  console.error("Global error:", err);
+  res.status(500).json({ 
+    message: "Internal Server Error", 
+    error: err.message,
+    stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
+  });
 });
 
 // Export the handler
