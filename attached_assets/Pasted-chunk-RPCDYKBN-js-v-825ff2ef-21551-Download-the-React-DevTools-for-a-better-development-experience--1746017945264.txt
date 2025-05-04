@@ -1,0 +1,98 @@
+chunk-RPCDYKBN.js?v=825ff2ef:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+chunk-QCHXOAYK.js?v=825ff2ef:760 Uncaught Error: React.Children.only expected to receive a single React element child.
+    at Object.onlyChild [as only] (chunk-QCHXOAYK.js?v=825ff2ef:760:19)
+    at chunk-2K77HOHX.js?v=825ff2ef:88:66
+    at renderWithHooks (chunk-RPCDYKBN.js?v=825ff2ef:11548:26)
+    at updateForwardRef (chunk-RPCDYKBN.js?v=825ff2ef:14325:28)
+    at beginWork (chunk-RPCDYKBN.js?v=825ff2ef:15946:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=825ff2ef:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=825ff2ef:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=825ff2ef:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=825ff2ef:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=825ff2ef:19198:20)
+chunk-RPCDYKBN.js?v=825ff2ef:521 Warning: validateDOMNesting(...): <a> cannot appear as a descendant of <a>.
+    at a
+    at a
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=825ff2ef:337:18
+    at li
+    at ul
+    at nav
+    at aside
+    at div
+    at div
+    at AdminLayout (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/src/components/layout/admin-layout.tsx:35:31)
+    at AdminDashboard (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/src/pages/admin/dashboard.tsx:35:20)
+    at Route (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=825ff2ef:323:16)
+    at ProtectedRoute (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/src/lib/protected-route.tsx:22:3)
+    at Switch (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=825ff2ef:379:17)
+    at Router
+    at Provider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WCYSSMAY.js?v=825ff2ef:32:15)
+    at TooltipProvider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=825ff2ef:59:5)
+    at AuthProvider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/src/hooks/use-auth.tsx:26:32)
+    at QueryClientProvider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=825ff2ef:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=825ff2ef:521
+Show 1 more frame
+Show less
+chunk-QCHXOAYK.js?v=825ff2ef:760 Uncaught Error: React.Children.only expected to receive a single React element child.
+    at Object.onlyChild [as only] (chunk-QCHXOAYK.js?v=825ff2ef:760:19)
+    at chunk-2K77HOHX.js?v=825ff2ef:88:66
+    at renderWithHooks (chunk-RPCDYKBN.js?v=825ff2ef:11548:26)
+    at updateForwardRef (chunk-RPCDYKBN.js?v=825ff2ef:14325:28)
+    at beginWork (chunk-RPCDYKBN.js?v=825ff2ef:15946:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=825ff2ef:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=825ff2ef:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=825ff2ef:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=825ff2ef:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=825ff2ef:19198:20)
+chunk-RPCDYKBN.js?v=825ff2ef:14032 The above error occurred in the <Primitive.button.SlotClone> component:
+
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=825ff2ef:79:13
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=825ff2ef:56:13
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=825ff2ef:42:13
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=825ff2ef:79:13
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=825ff2ef:56:13
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=825ff2ef:42:13
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-TLY54ZB2.js?v=825ff2ef:1927:13
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=825ff2ef:139:13
+    at https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=825ff2ef:938:13
+    at Provider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WCYSSMAY.js?v=825ff2ef:32:15)
+    at Provider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WCYSSMAY.js?v=825ff2ef:32:15)
+    at Provider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WCYSSMAY.js?v=825ff2ef:32:15)
+    at Popper (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-TLY54ZB2.js?v=825ff2ef:1919:11)
+    at Menu (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=825ff2ef:93:11)
+    at Provider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WCYSSMAY.js?v=825ff2ef:32:15)
+    at DropdownMenu (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=825ff2ef:904:5)
+    at div
+    at div
+    at div
+    at header
+    at div
+    at AdminLayout (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/src/components/layout/admin-layout.tsx:35:31)
+    at AdminDashboard (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/src/pages/admin/dashboard.tsx:35:20)
+    at Route (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=825ff2ef:323:16)
+    at ProtectedRoute (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/src/lib/protected-route.tsx:22:3)
+    at Switch (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=825ff2ef:379:17)
+    at Router
+    at Provider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WCYSSMAY.js?v=825ff2ef:32:15)
+    at TooltipProvider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=825ff2ef:59:5)
+    at AuthProvider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/src/hooks/use-auth.tsx:26:32)
+    at QueryClientProvider (https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=825ff2ef:2805:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ chunk-RPCDYKBN.js?v=825ff2ef:14032
+Show 1 more frame
+Show less
+chunk-RPCDYKBN.js?v=825ff2ef:9129 Uncaught Error: React.Children.only expected to receive a single React element child.
+    at Object.onlyChild [as only] (chunk-QCHXOAYK.js?v=825ff2ef:760:19)
+    at chunk-2K77HOHX.js?v=825ff2ef:88:66
+    at renderWithHooks (chunk-RPCDYKBN.js?v=825ff2ef:11548:26)
+    at updateForwardRef (chunk-RPCDYKBN.js?v=825ff2ef:14325:28)
+    at beginWork (chunk-RPCDYKBN.js?v=825ff2ef:15946:22)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=825ff2ef:19753:22)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=825ff2ef:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=825ff2ef:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=825ff2ef:19116:15)
+    at recoverFromConcurrentError (chunk-RPCDYKBN.js?v=825ff2ef:18736:28)

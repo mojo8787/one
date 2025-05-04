@@ -1,0 +1,72 @@
+Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+widget.js:1 1 - widget loading
+contentScript.js:1 2 - content script loaded
+contentScript.js:1 3a - window loaded
+contentScript.js:1 3b - rendering widget
+widget.js:1 4 - reached mount component
+widget.js:1 1 - widget loading
+contentScript.js:1 2 - content script loaded
+contentScript.js:1 3a - window loaded
+contentScript.js:1 3b - rendering widget
+/api/user:1 
+            
+            
+           Failed to load resource: the server responded with a status of 401 (Unauthorized)Understand this error
+widget.js:1 1 - widget loading
+contentScript.js:1 2 - content script loaded
+contentScript.js:1 3a - window loaded
+contentScript.js:1 3b - rendering widget
+/api/subscriptions/me:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+/api/subscriptions/me:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+Grammarly.js:2 [Telemetry.TS.position_manager]: WARN : Trying to modify corrupted range start Object
+printToConsole @ Grammarly.js:2Understand this warning
+Grammarly.js:2 [Telemetry.TS.position_manager]: WARN : Trying to modify corrupted range start Object
+printToConsole @ Grammarly.js:2Understand this warning
+/api/get-or-create-subscription:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+/api/subscriptions/me:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+/api/payments:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+/api/subscriptions/me:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+/api/subscriptions/me:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+/api/subscriptions/me:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+/api/subscriptions/me:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+/api/subscriptions/me:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+/api/get-or-create-subscription:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this error
+
+                
+          
+          
+          
+         Chrome is moving towards a new experience that allows users to choose to browse without third-party cookies.Understand this warning

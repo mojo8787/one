@@ -1,0 +1,93 @@
+Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+widget.js:1 1 - widget loading
+contentScript.js:1 2 - content script loaded
+contentScript.js:1 3a - window loaded
+
+                
+          
+          
+          
+         Chrome is moving towards a new experience that allows users to choose to browse without third-party cookies.Understand this warning
+contentScript.js:1 3b - rendering widget
+widget.js:1 4 - reached mount component
+queryClient.ts:15 
+            
+            
+           POST https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/api/get-or-create-subscription 500 (Internal Server Error)
+apiRequest @ queryClient.ts:15
+(anonymous) @ subscribe.tsx:103
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=36b81287:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=36b81287:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=36b81287:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=36b81287:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=36b81287:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=36b81287:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=36b81287:19447
+commitRootImpl @ chunk-RPCDYKBN.js?v=36b81287:19416
+commitRoot @ chunk-RPCDYKBN.js?v=36b81287:19277
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=36b81287:18895
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=36b81287:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=36b81287:18627
+setTimeout
+scheduleFn @ @tanstack_react-query.js?v=36b81287:555
+flush @ @tanstack_react-query.js?v=36b81287:569
+batch @ @tanstack_react-query.js?v=36b81287:587
+dispatch_fn @ @tanstack_react-query.js?v=36b81287:996
+setData @ @tanstack_react-query.js?v=36b81287:696
+onSuccess @ @tanstack_react-query.js?v=36b81287:897
+resolve @ @tanstack_react-query.js?v=36b81287:456
+Promise.then
+run @ @tanstack_react-query.js?v=36b81287:498
+start @ @tanstack_react-query.js?v=36b81287:536
+fetch @ @tanstack_react-query.js?v=36b81287:926
+executeFetch_fn @ @tanstack_react-query.js?v=36b81287:2211
+onSubscribe @ @tanstack_react-query.js?v=36b81287:1898
+subscribe @ @tanstack_react-query.js?v=36b81287:24
+(anonymous) @ @tanstack_react-query.js?v=36b81287:3022
+subscribeToStore @ chunk-RPCDYKBN.js?v=36b81287:11984
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=36b81287:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=36b81287:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=36b81287:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=36b81287:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=36b81287:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=36b81287:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=36b81287:19447
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=36b81287:18868
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=36b81287:9119
+commitRootImpl @ chunk-RPCDYKBN.js?v=36b81287:19432
+commitRoot @ chunk-RPCDYKBN.js?v=36b81287:19277
+finishConcurrentRender @ chunk-RPCDYKBN.js?v=36b81287:18805
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=36b81287:18718
+workLoop @ chunk-RPCDYKBN.js?v=36b81287:197
+flushWork @ chunk-RPCDYKBN.js?v=36b81287:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=36b81287:384Understand this error
+queryClient.ts:32 
+            
+            
+           GET https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/api/subscriptions/me 500 (Internal Server Error)
+(anonymous) @ queryClient.ts:32
+fetchFn @ @tanstack_react-query.js?v=36b81287:840
+run @ @tanstack_react-query.js?v=36b81287:494
+start @ @tanstack_react-query.js?v=36b81287:536
+fetch @ @tanstack_react-query.js?v=36b81287:926
+executeFetch_fn @ @tanstack_react-query.js?v=36b81287:2211
+onSubscribe @ @tanstack_react-query.js?v=36b81287:1898
+subscribe @ @tanstack_react-query.js?v=36b81287:24
+(anonymous) @ @tanstack_react-query.js?v=36b81287:3022
+subscribeToStore @ chunk-RPCDYKBN.js?v=36b81287:11984
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=36b81287:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=36b81287:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=36b81287:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=36b81287:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=36b81287:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=36b81287:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=36b81287:19447
+commitRootImpl @ chunk-RPCDYKBN.js?v=36b81287:19416
+commitRoot @ chunk-RPCDYKBN.js?v=36b81287:19277
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=36b81287:18895
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=36b81287:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=36b81287:18627Understand this error
+queryClient.ts:15 
+            
+            
+           POST https://89227cf5-fa56-485c-a712-57b89c7db708-00-zcfe168mkpny.picard.replit.dev/api/get-or-create-subscription 500 (Internal Server Error)

@@ -1,0 +1,91 @@
+Issue Type,Summary,Description,Acceptance Criteria,Priority,Story Points,Epic Link,Labels
+Epic,Customer Onboarding & Subscription,All stories enabling customers to sign up and purchase a Pureflow subscription.,,High,,,MVP
+Epic,Payment & Billing,All stories related to payment processing and billing.,,High,,,MVP
+Epic,Notifications & Reminders,All stories for timely notifications to users and staff.,,Medium,,,MVP
+Epic,Maintenance Technician Operations,Stories for technician-facing features in the app.,,High,,,MVP
+Epic,Admin Portal Basic,Stories for the initial web-based admin dashboard.,,High,,,MVP
+Epic,Core Infrastructure & Security,Technical enablers and security foundations for the MVP.,,High,,,MVP
+Story,User registration with email/phone,"As a prospective customer, I want to sign up using my email or phone number so that I can create an account.","- Sign‑up requires unique email or phone
+- Verification code sent
+- Successful account creation redirects to dashboard",High,3,Customer Onboarding & Subscription,MVP
+Story,Select subscription plan,"As a customer, I want to select the 25 JOD/mo Pureflow plan so that I understand my costs.","- Plan details displayed
+- Price shown in JOD
+- Selection stored in cart/session",High,2,Customer Onboarding & Subscription,MVP
+Story,Accept terms & privacy policy,"As a customer, I must accept the Terms & Conditions and Privacy Policy before making any payment.","- T&C and Privacy Policy displayed
+- Checkbox must be ticked
+- Timestamp and version stored",High,1,Customer Onboarding & Subscription,"Compliance,MVP"
+Story,Schedule installation date/time,"As a customer, I want to pick an installation date and time so that I can be available.","- Calendar picker with next‑day minimum lead
+- Conflict prevented if slot already full
+- Confirmation screen shows chosen slot",High,3,Customer Onboarding & Subscription,MVP
+Story,Enter installation address with map,"As a customer, I want to provide my home address and pin it on a map so that technicians can find me easily.","- Address autocomplete via Google Maps API
+- Latitude/Longitude stored
+- User can edit address later",High,3,Customer Onboarding & Subscription,MVP
+Story,View subscription status,"As a customer, I want to view my active subscription and renewal date.","- Shows next renewal date
+- Shows payment status
+- Option to cancel (soft delete)",Medium,2,Customer Onboarding & Subscription,MVP
+Story,Pay with Visa/Mastercard,"As a customer, I want to pay my subscription using Visa or Mastercard.","- Payment gateway supports Visa & Mastercard
+- Failed payments retry logic
+- Transaction receipt emailed",High,5,Payment & Billing,"PCI,MVP"
+Story,Enable cash payment option,"As a customer, I want to choose 'Cash on Installation' so I can pay in Jordanian Dinar to the technician.","- Option selectable at checkout
+- Cash due amount shown in job details for technician
+- Technician marks payment collected",High,3,Payment & Billing,MVP
+Story,Payment confirmation receipt,"As a customer, I receive an in‑app and email receipt after successful payment.","- Receipt includes amount, VAT, masked card digits
+- Downloadable PDF
+- Listed in Payments history",Medium,2,Payment & Billing,MVP
+Story,Configure pricing in admin,"As an admin, I can change the price of the subscription plan.","- Admin field for price in JOD
+- Changes apply only to new sign‑ups
+- Audit log recorded",Medium,2,Payment & Billing,"Admin,MVP"
+Story,Monthly filter change reminder,"As a customer, I get a push notification 3 days before my scheduled filter change.","- Trigger runs monthly
+- Notification deep‑links to appointment details
+- Reschedule option available",High,2,Notifications & Reminders,MVP
+Story,Technician job assignment alert,"As a technician, I receive an instant notification when a new job is assigned.","- Jobs appear in technician app list
+- Badge count updated
+- Accept/Decline action supported",High,2,Notifications & Reminders,MVP
+Story,Upcoming payment renewal notice,"As a customer, I am reminded 7 days before my subscription renews.","- Push + email
+- Option to update payment method
+- Works for all payment types",Medium,2,Notifications & Reminders,MVP
+Story,Technician login,"As a technician, I can log in using my staff credentials.","- JWT token issued
+- Role = Technician
+- Redirect to Jobs screen",High,1,Maintenance Technician Operations,MVP
+Story,View assigned jobs list,"As a technician, I see a list of today's jobs with address & time.","- Sorted by time
+- Job status badges
+- Pull‑to‑refresh",High,3,Maintenance Technician Operations,MVP
+Story,Update job status,"As a technician, I can mark a job as En Route, Arrived, or Completed.","- Status updates visible to customer
+- Completed requires photo proof
+- Timestamp stored",High,3,Maintenance Technician Operations,MVP
+Story,Capture photo proof,"As a technician, I upload a photo after filter change as proof.","- Photo stored in S3
+- Max 5 MB
+- Visible to admin and customer",Medium,3,Maintenance Technician Operations,MVP
+Story,Navigation to customer address,"As a technician, I open the job address in Google Maps.","- Tap address launches maps with coordinates
+- Works on iOS & Android
+- Fallback to browser",Medium,1,Maintenance Technician Operations,MVP
+Story,Admin login,"As an admin, I log in via the web portal with 2FA.","- Username/password + OTP
+- Redirect to dashboard
+- 5‑attempt lockout",High,2,Admin Portal Basic,"Security,MVP"
+Story,View active subscriptions,"As an admin, I see a table of active subscribers with status.","- Search & filter by city
+- Export to CSV
+- Links to subscriber profile",High,3,Admin Portal Basic,MVP
+Story,Assign job to technician,"As an admin, I can manually assign installation or maintenance jobs.","- Dropdown of available technicians
+- Validation on overlapping schedules
+- Both parties notified",Medium,3,Admin Portal Basic,MVP
+Story,View payment transactions,"As an admin, I can view all payment transactions and statuses.","- Date range filter
+- Amount & fees shown
+- Failed payments highlighted",Medium,2,Admin Portal Basic,"Finance,MVP"
+Story,Manage technician accounts,"As an admin, I create, disable, and reset passwords for technician accounts.","- Create form with role
+- Soft delete retains history
+- Email invite sent",Medium,2,Admin Portal Basic,MVP
+Story,Backend API (GraphQL/REST),"As a system, I expose secure endpoints for mobile and web clients.","- CRUD for subscriptions, payments, jobs
+- Versioned API
+- Swagger docs available",High,8,Core Infrastructure & Security,"Tech,MVP"
+Story,JWT-based authentication,"As a system, I issue JWT tokens for authenticated sessions.","- Tokens expire after 1 h
+- Refresh token endpoint
+- Roles encoded in claims",High,5,Core Infrastructure & Security,"Security,MVP"
+Story,Encrypt PII in database,"As a system, I encrypt personally identifiable information at rest.","- AES‑256 encryption
+- Keys rotated annually
+- Logs show access events",High,3,Core Infrastructure & Security,"Compliance,MVP"
+Story,Role‑based access control,"As a system, I enforce RBAC for customer, technician, and admin roles.","- Role checking middleware
+- Unauthorized access returns 403
+- Unit tests for all endpoints",High,3,Core Infrastructure & Security,"Security,MVP"
+Story,Application monitoring & logging,"As an ops engineer, I can monitor uptime, errors, and performance.","- Integrate Datadog/NewRelic
+- Alerts for 5xx errors > 1% in 5 min
+- Dashboard shared with team",Medium,3,Core Infrastructure & Security,"Ops,MVP"

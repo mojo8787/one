@@ -1,0 +1,42 @@
+New Customer Journey in PureFlow
+Here's the complete flow for a new customer signing up for the PureFlow water filter subscription service:
+
+Step 1: Account Creation
+New user registers by providing their email, phone, username and password on the authentication page
+System creates a user account with role "customer"
+System initializes their onboarding state with step="account"
+A pending subscription is automatically created in the database
+Step 2: Welcome & Confirmation
+User is redirected to the onboarding welcome page
+This page displays their account information and explains the onboarding process
+When they click "Continue to Plan Selection," the onboarding state updates to step="plan"
+Step 3: Subscription Plan Selection
+User is shown available water filter subscription plans
+They can select the plan that best fits their needs (pricing varies by plan)
+When they choose a plan, onboarding state updates to step="address"
+Step 4: Address Collection
+User enters their home address where the filter will be installed
+System saves the address and coordinates for technician routing
+When address is confirmed, onboarding state updates to step="payment"
+Step 5: Payment Options
+User chooses between payment methods:
+Card payment (processed through Stripe)
+Cash payment (pay the technician during installation)
+If card is selected, they're redirected to the Stripe checkout flow
+Step 6: Stripe Checkout (Card Payment Only)
+User enters their card details on the Stripe checkout page
+Stripe handles all payment processing and security
+Upon successful payment, they return to the app
+The subscription status updates from "pending" to "active"
+Onboarding state updates to step="complete"
+Step 7: Installation Scheduling
+System creates a new installation job
+User is directed to their dashboard, which shows their active subscription
+They can track when a technician will arrive for their filter installation
+Step 8: Customer Dashboard
+After completing onboarding, customers access their dashboard showing:
+Subscription status and upcoming payments
+Installation/service appointment times
+Options to request filter changes or repairs
+Account settings and notifications
+The onboarding flow ensures users complete each necessary step before accessing the full platform features, creating a smooth, guided experience for new customers.
